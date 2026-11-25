@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawar | Founder & CEO</title>
+    <!-- Mengimpor Font Elegan dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #d81b60;
+            --soft-pink: #fce4ec;
+            --accent-pink: #ff80ab;
+            --dark-rose: #880e4f;
+            --text-dark: #2d1b22;
+            --text-muted: #6d4c58;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fff0f5 0%, #f8bbd0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .executive-card {
+            max-width: 720px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(216, 27, 96, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Header Banner Mewah */
+        .card-banner {
+            height: 160px;
+            background: linear-gradient(120deg, #ad1457, #ec407a, #f48fb1);
+            position: relative;
+        }
+
+        .badge-vip {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* Bagian Profil */
+        .profile-section {
+            padding: 0 40px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-img-wrapper {
+            width: 160px;
+            height: 160px;
+            margin: -80px auto 20px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(45deg, #d81b60, #ff80ab);
+            box-shadow: 0 10px 25px rgba(216, 27, 96, 0.3);
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #fce4ec;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--dark-rose);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .executive-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        /* Ringkasan Eksekutif */
+        .bio-box {
+            background: var(--soft-pink);
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin-bottom: 28px;
+            border-left: 4px solid var(--primary-pink);
+            text-align: left;
+        }
+
+        .bio-box h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark-rose);
+            margin-bottom: 8px;
+        }
+
+        .bio-box p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Statistik Pencapaian Bisnis */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            background: #fff;
+            border: 1px solid #f8bbd0;
+            padding: 15px 10px;
+            border-radius: 14px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Informasi Kontak Eksekutif */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            text-align: left;
+        }
+
+        .contact-item {
+            background: #fff5f8;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid #f48fb1;
+        }
+
+        .contact-item span {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-pink);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            word-break: break-word;
+        }
+
+        /* Tombol Aksi */
+        .cta-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d81b60, #ad1457);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 25px rgba(216, 27, 96, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-pink);
+            border: 2px solid var(--primary-pink);
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--soft-pink);
+        }
+
+        @media (max-width: 600px) {
+            .profile-section {
+                padding: 0 20px 30px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="executive-card">
+        <!-- Banner Atas -->
+        <div class="card-banner">
+            <div class="badge-vip">Global Business Leader</div>
+        </div>
+
+        <div class="profile-section">
+            <!-- Foto Profil -->
+            <div class="profile-img-wrapper">
+                <img src="Mawar.jpeg" alt="Mawar - CEO & Founder">
+            </div>
+
+            <!-- Nama & Gelar Bisnis -->
+            <h1>Mawar</h1>
+            <div class="executive-title">Founder, CEO &amp; Tech Entrepreneur</div>
+
+            <!-- Statistik Bisnis -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Perusahaan &amp; Unit Bisnis</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Global</span>
+                    <span class="stat-label">Jaringan Kemitraan</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Top 1%</span>
+                    <span class="stat-label">Visionary Leader</span>
+                </div>
+            </div>
+
+            <!-- Tentang Saya (Dipadukan dengan latar belakang kampus & fokus bisnis) -->
+            <div class="bio-box">
+                <h3>Executive Profile</h3>
+                <p>
+                    Profesional di bidang bisnis yang berfokus pada ekspansi usaha, tata kelola perusahaan, dan penciptaan nilai jangka panjang bagi pertumbuhan ekonomi di Makassar dan kawasan Indonesia Timur. Sebagai seorang mahasiswa di kampus <strong>STMIK Kharisma</strong>, saya memadukan inovasi teknologi dan kepemimpinan strategis untuk membangun ekosistem bisnis modern yang berdaya saing tinggi.
+                </p>
+            </div>
+
+            <!-- Informasi Kontak -->
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>Executive Email</span>
+                    <p>Mawar_26@kharisma.ac.id</p>
+                </div>
+                <div class="contact-item">
+                    <span>Direct Line</span>
+                    <p>0895339908948</p>
+                </div>
+                <div class="contact-item">
+                    <span>Headquarters</span>
+                    <p>Makassar, Indonesia</p>
+                </div>
+            </div>
+
+            <!-- Tombol Interaktif -->
+            <div class="cta-group">
+                <a href="mailto:Mawar_26@kharisma.ac.id" class="btn-primary">Hubungi untuk Kemitraan</a>
+                <a href="https://wa.me/62895339908948" target="_blank" class="btn-outline">Jadwalkan Pertemuan</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
